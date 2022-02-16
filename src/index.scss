@@ -147,7 +147,7 @@ table {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: $white-bg;
   color: $light-text;
   font-weight: 400;
@@ -160,4 +160,143 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+// Text
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Signika", sans-serif;
+  color: $medium-dark-bg;
+}
+
+h1 {
+  font-size: 2.9rem;
+  font-weight: 700;
+  line-height: 3rem;
+  margin: 1.225 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 3rem;
+  margin: 1.125 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 3rem;
+  margin: 1.025 0;
+}
+
+h4 {
+  font-size: 1.313rem;
+  font-weight: 600;
+  line-height: 1.563rem;
+  margin: 0.925 0;
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.875rem;
+  margin: 0.825 0;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.875rem;
+  margin: 0.725 0;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  color: $light-text;
+  margin: 0.625 0;
+}
+
+small {
+  font-size: 0.8rem;
+  line-height: 1.025rem;
+  color: $light-text;
+  margin: 0.625 0;
+}
+
+@media screen and (max-width: 992px) {
+  h1 {
+    line-height: 3.063rem;
+  }
+
+  h2 {
+    line-height: 3.063rem;
+  }
+
+  h3 {
+    margin: 1.75 0;
+  }
+
+  p {
+    font-size: 0.938rem;
+  }
+}
+
+// Buttons
+
+.button {
+  outline: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  font-family: "Signika", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: $main-transition;
+
+  &:hover {
+    transform: translateY(-0.05rem);
+  }
+}
+
+.sm-button {
+  font-size: 0.713rem;
+  padding: 0.4rem 1.6rem;
+  margin: 1rem 1rem 1rem 0;
+}
+
+.md-button {
+  font-size: 0.813rem;
+  padding: 0.8rem 2rem;
+  margin: 1rem 1rem 1rem 0;
+}
+
+.lg-button {
+  font-size: 0.913rem;
+  padding: 1.2rem 2.5rem;
+  margin: 1rem 1rem 1rem 0;
+}
+
+.primary-button {
+  background-color: $primary-color;
+  color: $white-text;
+}
+
+.secondary-button {
+  background-color: $secondary-color;
+  color: $white-text;
+}
+
+// Spacing
+
+section {
+  padding: 2.25 0;
 }
