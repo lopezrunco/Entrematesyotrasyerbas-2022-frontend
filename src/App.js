@@ -6,11 +6,15 @@ import Magazine from './pages/magazine'
 import Home from './pages/home'
 import NotFound from './pages/notFound'
 
+import Nav from './components/Nav'
+
 import './App.scss'
 
 function App() {
   return (
     <div className="App">
+
+      <Nav />
 
       <Routes>
         <Route path='/contacto' element={<Contact />} />
