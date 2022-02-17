@@ -1,0 +1,20 @@
+.short-info {
+  h3,
+  h4,
+  p {
+    text-align: center;
+  }
+
+  p {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .short-info {
+    p {
+      width: 60%;
+    }
+  }
+}

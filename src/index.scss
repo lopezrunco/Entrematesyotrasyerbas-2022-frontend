@@ -172,62 +172,65 @@ h5,
 h6 {
   font-family: "Signika", sans-serif;
   color: $medium-dark-bg;
+  text-align: left;
 }
 
 h1 {
   font-size: 2.9rem;
   font-weight: 700;
   line-height: 3rem;
-  margin: 1.225 0;
+  margin: 1.225rem 0;
 }
 
 h2 {
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 3rem;
-  margin: 1.125 0;
+  margin: 1.125rem 0;
 }
 
 h3 {
   font-size: 1.5rem;
   font-weight: 800;
-  line-height: 3rem;
-  margin: 1.025 0;
+  line-height: 2rem;
+  margin: 1.025rem 0;
 }
 
 h4 {
   font-size: 1.313rem;
   font-weight: 600;
   line-height: 1.563rem;
-  margin: 0.925 0;
+  margin: 0.925rem 0;
 }
 
 h5 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.875rem;
-  margin: 0.825 0;
+  margin: 0.825rem 0;
 }
 
 h6 {
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.875rem;
-  margin: 0.725 0;
+  line-height: 1rem;
+  margin: 0.725rem 0;
 }
 
 p {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.625rem;
   color: $light-text;
-  margin: 0.625 0;
+  margin: 0.625rem 0;
+  text-align: left;
 }
 
 small {
   font-size: 0.8rem;
   line-height: 1.025rem;
   color: $light-text;
-  margin: 0.625 0;
+  margin: 0.625rem 0;
+  text-align: left;
 }
 
 @media screen and (max-width: 992px) {
@@ -298,5 +301,12 @@ small {
 // Spacing
 
 section {
-  padding: 2.25 0;
+  padding: 2.25rem 0;
+}
+
+
+@media screen and (min-width: 992px) {
+  section {
+    padding: 6.25rem 0;
+  }
 }

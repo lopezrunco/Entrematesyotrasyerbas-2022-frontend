@@ -13,7 +13,6 @@ function HomeSlider() {
 
         <Carousel fade variant='light'>
             <Carousel.Item className='carousel-item'>
-                <div className='overlay'></div>
                 <img
                     className="d-block w-100 carousel-img"
                     src={slider1}
@@ -25,7 +24,6 @@ function HomeSlider() {
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <div className='overlay'></div>
                 <img
                     className="d-block w-100 carousel-img"
                     src={slider2}
@@ -38,7 +36,6 @@ function HomeSlider() {
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <div className='overlay'></div>
                 <img
                     className="d-block w-100 carousel-img"
                     src={slider3}
