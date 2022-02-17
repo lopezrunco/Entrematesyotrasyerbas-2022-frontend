@@ -1,4 +1,5 @@
 import HomeSlider from '../../components/HomeSlider'
+import NewMagazine from '../../components/NewMagazine'
 import ShortInfo from '../../components/ShortInfo'
 
 function home() {
@@ -6,6 +7,7 @@ function home() {
         <>
             <HomeSlider />
             <ShortInfo />
+            <NewMagazine />
         </>
     )
 }

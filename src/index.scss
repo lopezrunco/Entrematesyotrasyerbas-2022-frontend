@@ -233,6 +233,11 @@ small {
   text-align: left;
 }
 
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+
 @media screen and (max-width: 992px) {
   h1 {
     line-height: 3.063rem;
@@ -248,6 +253,17 @@ small {
 
   p {
     font-size: 0.938rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  small {
+    text-align: center;
   }
 }
 
@@ -303,7 +319,6 @@ small {
 section {
   padding: 2.25rem 0;
 }
-
 
 @media screen and (min-width: 992px) {
   section {

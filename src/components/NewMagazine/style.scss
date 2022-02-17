@@ -1,0 +1,72 @@
+@import "../../Variables.scss";
+
+.new-magazine {
+  background-color: $light-bg;
+
+  .container .row {
+    .last-number-img {
+      overflow: hidden;
+      margin-bottom: 2rem;
+
+      img {
+        width: 70%;
+      }
+    }
+
+    .info {
+      h3 {
+        margin-bottom: 2rem;
+      }
+
+      .icons {
+        gap: 1rem;
+
+        .icon {
+          font-size: 5rem;
+          margin-bottom: 1rem;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .new-magazine {
+    .container .row {
+      .last-number-img {
+        overflow: visible;
+        margin-bottom: 0;
+
+        img {
+          transform: rotate(-4deg);
+          box-shadow: 5px 5px 20px #00000063;
+          cursor: pointer;
+          transition: $main-transition;
+
+          &:hover {
+            transform: rotate(-5deg);
+          }
+        }
+      }
+
+      .info {
+        h3,
+        h4,
+        p {
+          text-align: center;
+        }
+
+        h3 {
+          width: 50%;
+          margin: 0 auto;
+          margin-bottom: 3rem;
+        }
+
+        .icons {
+          gap: 0;
+        }
+      }
+    }
+  }
+}
