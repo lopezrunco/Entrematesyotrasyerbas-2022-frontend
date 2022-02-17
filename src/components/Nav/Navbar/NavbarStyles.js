@@ -67,7 +67,7 @@ export const NavbarWrapper = styled.nav`
       text-transform: Capitalize;
       justify-content: center;
       width: auto;
-      color: red !important;
+      color: #ffffff !important;
       border-bottom: none;
 
       .icon {

@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const HeaderWrapper = styled.header`
+  position: relative;
   height: 10vh;
   display: flex;
   justify-content: space-between;
@@ -11,6 +12,8 @@ export const HeaderWrapper = styled.header`
   z-index: 9999;
   
   @media only screen and (min-width: 992px) {
+    position: fixed;
+    width: 100%;
     background-color: transparent;
     border-bottom: none;
   }
