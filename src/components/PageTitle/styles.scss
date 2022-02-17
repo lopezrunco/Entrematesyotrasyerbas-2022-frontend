@@ -1,0 +1,51 @@
+@import "../../Variables.scss";
+
+.page-title {
+  background-position: center;
+  background-size: cover;
+  background-position: bottom;
+  padding: 3rem 0;
+
+  &.magazine {
+    background-image: url("../../assets/slider2.jpg");
+  }
+
+  &.news {
+    background-image: url("../../assets/slider3.jpg");
+  }
+
+  &.contact {
+    background-image: url("../../assets/slider4.jpg");
+  }
+
+  h2 {
+    line-height: 0;
+    color: $white-text;
+  }
+
+  p {
+    display: none;
+    color: $white-text;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .page-title {
+    padding: 10rem;
+
+    p {
+      display: block;
+      width: 70%;
+      margin: 0 auto;
+    }
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    h2,
+    p {
+      text-align: center;
+    }
+  }
+}

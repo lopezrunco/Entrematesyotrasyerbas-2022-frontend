@@ -1,7 +1,15 @@
-function magazine() {
+import PageTitle from "../../components/PageTitle"
+
+function Magazine() {
     return (
-        <h1>Revista</h1>
+        <>
+            <PageTitle
+                title='Revista'
+                text='Todos temas que le interesan, notas y la buena información de siempre, ahora en papel'
+                imgClassName='magazine'
+            />
+        </>
     )
 }
 
-export default magazine
+export default Magazine

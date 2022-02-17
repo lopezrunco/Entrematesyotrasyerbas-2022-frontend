@@ -2,7 +2,7 @@ import HomeSlider from '../../components/HomeSlider'
 import NewMagazine from '../../components/NewMagazine'
 import ShortInfo from '../../components/ShortInfo'
 
-function home() {
+function Home() {
     return (
         <>
             <HomeSlider />
@@ -12,4 +12,4 @@ function home() {
     )
 }
 
-export default home
+export default Home

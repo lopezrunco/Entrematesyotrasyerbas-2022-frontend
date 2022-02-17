@@ -1,7 +1,16 @@
-function news() {
+import PageTitle from "../../components/PageTitle"
+
+function News() {
+
     return (
-        <h1>Novedades</h1>
+        <>
+            <PageTitle
+                title='Novedades'
+                text='Estas son las últimas novedades que compartimos tanto en nuestro programa radial como en la revista'
+                imgClassName='news'
+            />
+        </>
     )
 }
 
-export default news
+export default News
