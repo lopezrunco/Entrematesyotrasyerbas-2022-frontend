@@ -8,6 +8,7 @@ import Home from './pages/home'
 import NotFound from './pages/notFound'
 
 import Nav from './components/Nav'
+import Bottom from './components/Bottom'
 
 import './App.scss'
 
@@ -25,6 +26,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
+
+      <Bottom />
 
     </div>
   )
