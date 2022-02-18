@@ -1,0 +1,35 @@
+@import "../../Variables.scss";
+
+.carve-online {
+  background-image: url("../../assets/radio-carve-online-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 7rem 0;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2,
+    p {
+      color: $white-text;
+    }
+
+    p {
+        text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+    .carve-online {
+        .wrapper {
+            p {
+                width: 60%;
+            }
+        }
+    }
+}
