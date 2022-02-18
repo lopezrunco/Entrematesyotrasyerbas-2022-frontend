@@ -9,6 +9,7 @@ import NotFound from './pages/notFound'
 
 import Nav from './components/Nav'
 import Bottom from './components/Bottom'
+import Footer from './components/Footer'
 
 import './App.scss'
 
@@ -28,6 +29,7 @@ function App() {
       </Routes>
 
       <Bottom />
+      <Footer />
 
     </div>
   )
