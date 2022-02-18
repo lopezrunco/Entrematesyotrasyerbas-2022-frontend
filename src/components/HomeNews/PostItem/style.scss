@@ -1,0 +1,36 @@
+@import "../../../Variables.scss";
+
+.post-wrapper {
+  overflow: hidden;
+  background-color: $light-bg;
+  margin-bottom: 2rem;
+
+  h3 {
+    cursor: pointer;
+    transition: $main-transition;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .img-wrapper {
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      max-height: 20rem;
+      opacity: 1;
+      transition: $main-transition;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .info-wrapper {
+    padding: 2rem;
+  }
+}

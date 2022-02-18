@@ -1,6 +1,7 @@
 import HomeSlider from '../../components/HomeSlider'
-import NewMagazine from '../../components/NewMagazine'
 import ShortInfo from '../../components/ShortInfo'
+import NewMagazine from '../../components/NewMagazine'
+import HomeNews from '../../components/HomeNews'
 
 function Home() {
     return (
@@ -8,6 +9,7 @@ function Home() {
             <HomeSlider />
             <ShortInfo />
             <NewMagazine />
+            <HomeNews />
         </>
     )
 }
