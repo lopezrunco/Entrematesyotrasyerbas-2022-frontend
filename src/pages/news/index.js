@@ -81,8 +81,8 @@ function News() {
             />
 
                 <main className="news-page">
-                    <div className="container">
-                        <div className="row posts-container">
+                    <section className="container">
+                        <article className="row posts-container">
                             {state.isFetching ? (
                                 <p>Loading posts...</p>
                             ) : state.hasError ? (
@@ -91,19 +91,15 @@ function News() {
                                 <>
                                     {state.posts.length > 0 ? (
                                         state.posts.map(post => (
-                                            // <PostItem key={post.id} post={post} />
-                                            <>
-                                            <p>{post.title}</p>
-                                            <img src={post.primaryImageUrl} />
-                                            </>
+                                            <PostItem key={post.id} post={post} />
                                         ))
                                     ) : (
                                         <p>No posts yet!</p>
                                     )}
                                 </>
                             )}
-                        </div>
-                    </div>
+                        </article>
+                    </section>
                 </main>
         </>
     )
