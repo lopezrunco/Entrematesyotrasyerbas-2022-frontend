@@ -273,6 +273,23 @@ a {
   font-weight: 700;
 }
 
+.tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  .tag {
+    border: 1px solid $primary-color;
+    outline: none;
+    background-color: transparent;
+    color: $primary-color;
+    padding: 0 1rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+}
+
 @media screen and (max-width: 992px) {
   h1 {
     line-height: 3.063rem;
@@ -311,6 +328,11 @@ a {
 
   span.author {
     padding-bottom: 0;
+  }
+
+  .tags {
+    margin: 1.5rem 0;
+    justify-content: flex-start;
   }
 }
 

@@ -20,7 +20,7 @@ function PostItem({ post }) {
                     <span className="category">{post.category}</span>
                     <h3 onClick={viewPost}>{post.title}</h3>
                     <p>{post.content[0]}</p>
-                    <p className="tags"> 
+                    <p className="tags">
                         {post.tags.map((tag, index) => {
                             return <button className="tag" key={index}>{tag}</button>
                         })}

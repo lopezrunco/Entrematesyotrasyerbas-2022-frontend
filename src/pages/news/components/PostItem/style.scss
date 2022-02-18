@@ -1,54 +1,26 @@
-@import '../../../../Variables.scss';
+@import "../../../../Variables.scss";
 
 .post-wrapper {
+  overflow: hidden;
+  background-color: $light-bg;
+  margin-bottom: 2rem;
+
+  .img-wrapper {
     overflow: hidden;
-    background-color: $light-bg;
-    margin-bottom: 2rem;
+    cursor: pointer;
 
-    .img-wrapper {
-        overflow: hidden;
-        cursor: pointer;
+    img {
+      max-height: 25rem;
+      opacity: 1;
+      transition: $main-transition;
 
-        img {
-            max-height: 25rem;
-            opacity: 1;
-            transition: $main-transition;
-
-            &:hover {
-                opacity: .9;
-            }
-        }
+      &:hover {
+        opacity: 0.9;
+      }
     }
+  }
 
-    .info-wrapper {
-        padding: 2rem;
-
-        .tags {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: .5rem;
-            
-            .tag {
-                border: 1px solid $primary-color;
-                outline: none;
-                background-color: transparent;
-                color: $primary-color;
-                padding: 0 1rem;
-                font-size: .8rem;
-                text-transform: uppercase;
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .post-wrapper {
-        .info-wrapper {
-            .tags {
-                margin: 1.5rem 0;
-                justify-content: flex-start;
-            }
-        }
-    }
+  .info-wrapper {
+    padding: 2rem;
+  }
 }

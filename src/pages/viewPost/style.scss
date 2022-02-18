@@ -1,0 +1,63 @@
+@import "../../Variables.scss";
+
+.view-post-page {
+  overflow: hidden;
+
+  .img-wrapper {
+    overflow: hidden;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .post-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    .author {
+      padding: 0;
+    }
+  }
+  .secondary-images {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 2rem 0;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+    background-color: $light-bg;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .view-post-page {
+    h2 {
+      margin-bottom: 0;
+    }
+    .post-info {
+      justify-content: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .secondary-images {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      img {
+        width: 100px;
+        flex: 1;
+      }
+    }
+  }
+}

@@ -5,6 +5,8 @@ import PageTitle from "../../components/PageTitle"
 import { apiUrl } from "../../utils/api-url"
 import { FETCH_POST_FAILURE, FETCH_POST_REQUEST, FETCH_POST_SUCCESS } from './action-types'
 
+import './style.scss'
+
 const initialState = {
     post: undefined,
     isFetching: false,
@@ -78,19 +80,68 @@ function ViewPost() {
                 imgClassName='news'
             />
 
-            <main className="view-post-page">
-                <section className="container">
-                    <article className="row">
-                        <div>
-                            {state.post && (
-                                <>
-                                    <h2>{state.post.title}</h2>
-                                </>
-                            )}
-                        </div>
-                    </article>
-                </section>
-            </main>
+            <div className="container">
+                <div className="row">
+
+                    <div className="col-lg-9">
+                        <main className="view-post-page">
+                            <section className="container">
+                                <article className="row">
+                                    <div>
+                                        {state.post && (
+                                            <>
+                                                <div className="img-wrapper">
+                                                    <img src={state.post.primaryImageUrl} />
+                                                </div>
+                                                <h2>{state.post.title}</h2>
+                                                <div className="post-info">
+                                                    <span className="author">Autor: {state.post.author}</span>
+                                                    <span>/</span>
+                                                    <span className="category">Categoria: {state.post.category}</span>
+                                                </div>
+                                                <div className="content">
+                                                    {state.post.content.map(contentP => {
+                                                        return <p>{contentP}</p>
+                                                    })}
+                                                </div>
+                                                <div className="subcontent">
+                                                    {state.post.subcontent.map(subcontentP => {
+                                                        return <p>{subcontentP}</p>
+                                                    })}
+                                                </div>
+                                                <div className="secondary-images">
+                                                    {state.post.secondaryImagesUrls.map((imgUrl, imgUrlIndex) => {
+                                                        return <img key={imgUrlIndex} src={imgUrl} />
+                                                    })}
+                                                </div>
+                                                <p className="tags">
+                                                    {state.post.tags.map((tag, tagIndex) => {
+                                                        return <button className="tag" key={tagIndex}>{tag}</button>
+                                                    })}
+                                                </p>
+                                                <div className="links">
+                                                    {state.post.links.map((link, linkIndex) => {
+                                                        return <p key={linkIndex}>{link}</p>
+                                                    })}
+                                                </div>
+                                            </>
+                                        )}
+                                    </div>
+                                </article>
+                            </section>
+                        </main>
+                    </div>
+
+                    <div className="col-lg-3">
+                        <aside>
+                            <section>
+                                Aside
+                            </section>
+                        </aside>
+                    </div>
+
+                </div>
+            </div>
         </>
     )
 }
