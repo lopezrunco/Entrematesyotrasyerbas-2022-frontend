@@ -1,0 +1,28 @@
+@import "../../Variables.scss";
+
+.ads {
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   flex-wrap: wrap;
+  //   gap: 1rem;
+
+  a {
+    img {
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid $border-color;
+    }
+  }
+}
+
+// @media screen and (min-width: 768px) {
+//   .ads {
+//     flex-direction: row;
+//     justify-content: center;
+
+//     img {
+//       width: 250px;
+//       height: auto;
+//     }
+//   }
+// }
