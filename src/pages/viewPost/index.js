@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import PageTitle from "../../components/PageTitle"
 import { apiUrl } from "../../utils/api-url"
 import { FETCH_POST_FAILURE, FETCH_POST_REQUEST, FETCH_POST_SUCCESS } from './action-types'
+import AuthorInfo from "./components/AuthorInfo"
 
 import './style.scss'
 
@@ -135,7 +136,7 @@ function ViewPost() {
                     <div className="col-lg-3">
                         <aside>
                             <section>
-                                Aside
+                                <AuthorInfo />
                             </section>
                         </aside>
                     </div>

@@ -5,6 +5,15 @@
   background-color: $light-bg;
   margin-bottom: 2rem;
 
+  h3 {
+    cursor: pointer;
+    transition: $main-transition;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
   .img-wrapper {
     overflow: hidden;
     cursor: pointer;

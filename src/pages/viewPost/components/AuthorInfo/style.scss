@@ -1,0 +1,28 @@
+@import "../../../../Variables.scss";
+
+.author-info {
+  overflow: hidden;
+  background-color: $primary-color;
+  padding: 3rem;
+
+  h5,
+  small,
+  p {
+    color: $white-text;
+    text-align: center;
+  }
+
+  h5 {
+      margin-bottom: 0;
+  }
+
+  .avatar {
+    overflow: hidden;
+
+    img {
+      border-radius: 50%;
+      width: 80%;
+      height: auto;
+    }
+  }
+}
