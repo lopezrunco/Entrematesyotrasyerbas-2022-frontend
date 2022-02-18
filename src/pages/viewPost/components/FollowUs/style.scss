@@ -1,0 +1,30 @@
+@import "../../../../Variables.scss";
+
+.follow-us {
+  background-color: $light-bg;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  a {
+    color: $dark-text;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 2rem;
+    background-color: darken($color: $light-bg, $amount: 10);
+    cursor: pointer;
+    transition: $main-transition;
+
+    &:hover {
+      background-color: darken($color: $light-bg, $amount: 5);
+    }
+  }
+}

@@ -1,10 +1,12 @@
 import { useEffect, useReducer } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 
+import { FETCH_POST_FAILURE, FETCH_POST_REQUEST, FETCH_POST_SUCCESS } from './action-types'
 import PageTitle from "../../components/PageTitle"
 import { apiUrl } from "../../utils/api-url"
-import { FETCH_POST_FAILURE, FETCH_POST_REQUEST, FETCH_POST_SUCCESS } from './action-types'
 import AuthorInfo from "./components/AuthorInfo"
+import BlogAds from "./components/BlogAds"
+import FollowUs from "./components/FollowUs"
 
 import './style.scss'
 
@@ -135,8 +137,10 @@ function ViewPost() {
 
                     <div className="col-lg-3">
                         <aside>
-                            <section>
+                            <section className="news-aside">
                                 <AuthorInfo />
+                                <FollowUs />
+                                <BlogAds />
                             </section>
                         </aside>
                     </div>
