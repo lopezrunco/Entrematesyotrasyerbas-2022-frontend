@@ -7,6 +7,7 @@ import Magazine from './pages/magazine'
 import Home from './pages/home'
 import NotFound from './pages/notFound'
 
+import ScrollToTopOnNavigation from './components/ScrollToTopOnNavigation'
 import Nav from './components/Nav'
 import Bottom from './components/Bottom'
 import Footer from './components/Footer'
@@ -30,6 +31,7 @@ function App() {
 
       <Bottom />
       <Footer />
+      <ScrollToTopOnNavigation />
 
     </div>
   )
