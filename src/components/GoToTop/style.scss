@@ -1,0 +1,13 @@
+@import '../../Variables.scss';
+
+.go-to-top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    outline: none;
+    cursor: pointer;
+    color: $primary-color;
+    font-size: 2rem;
+    opacity: .7;
+    transition: $main-transition;
+}

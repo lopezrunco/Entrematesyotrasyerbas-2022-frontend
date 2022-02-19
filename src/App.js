@@ -11,6 +11,7 @@ import ScrollToTopOnNavigation from './components/ScrollToTopOnNavigation'
 import Nav from './components/Nav'
 import Bottom from './components/Bottom'
 import Footer from './components/Footer'
+import GoToTop from './components/GoToTop'
 
 import './App.scss'
 
@@ -31,6 +32,7 @@ function App() {
 
       <Bottom />
       <Footer />
+      <GoToTop />
       <ScrollToTopOnNavigation />
 
     </div>
