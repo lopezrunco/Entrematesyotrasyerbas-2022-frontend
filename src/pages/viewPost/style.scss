@@ -23,16 +23,23 @@
       padding: 0;
     }
   }
+
+  .content {
+    margin-bottom: 3rem;
+  }
+
+  .subcontent h4 {
+    margin-top: 2rem;
+  }
+
   .secondary-images {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
     margin: 2rem 0;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     overflow: hidden;
-    background-color: $light-bg;
 
     img {
       width: 100%;
