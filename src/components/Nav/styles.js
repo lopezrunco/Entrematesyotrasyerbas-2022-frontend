@@ -14,7 +14,7 @@ export const HeaderWrapper = styled.header`
   @media only screen and (min-width: 992px) {
     position: fixed;
     width: 100%;
-    background-color: transparent;
+    background-color: #00000047;
     border-bottom: none;
   }
   `

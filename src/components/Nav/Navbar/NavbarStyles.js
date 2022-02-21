@@ -24,7 +24,7 @@ export const NavbarWrapper = styled.nav`
     align-items: center;
     gap: .5rem;
     font-size: .9rem;
-    color: #363636 !important;
+    color:  !important;
     text-transform: uppercase;
     font-weight: 700;
     transition: all 0.5s !important;
@@ -36,11 +36,11 @@ export const NavbarWrapper = styled.nav`
   }
 
   a:hover {
-    color: #c7b300 !important;
+    color: #ffe603 !important;
   }
 
   a.active {
-    color: #c7b300 !important;
+    color: #ffe603 !important;
   }
 
   button {
