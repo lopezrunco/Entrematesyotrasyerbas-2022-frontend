@@ -3,8 +3,11 @@ import { useNavigate } from "react-router-dom"
 
 import { FETCH_POSTS_FAILURE, FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS } from './action-types'
 import { apiUrl } from '../../utils/api-url'
+
 import Loader from '../Loader'
 import PostItem from "./PostItem"
+import ServerError from "../ServerError"
+import NoPosts from "../NoPosts"
 
 const initialState = {
     posts: [],
@@ -80,7 +83,7 @@ function HomeNews() {
                         {state.isFetching ? (
                             <Loader />
                         ) : state.hasError ? (
-                            <p>An error ocurred!</p>
+                            <ServerError />
                         ) : (
                             <>
                                 {state.posts.length > 0 ? (
@@ -88,7 +91,7 @@ function HomeNews() {
                                         <PostItem key={post.id} post={post} />
                                     ))
                                 ) : (
-                                    <p>No posts yet!</p>
+                                    <NoPosts />
                                 )}
                             </>
                         )}

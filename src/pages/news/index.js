@@ -1,11 +1,14 @@
-import { createContext, useEffect, useReducer } from "react"
+import { useEffect, useReducer } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { FETCH_POSTS_FAILURE, FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS } from './action-types'
 import { apiUrl } from '../../utils/api-url'
+
 import PageTitle from "../../components/PageTitle"
 import PostItem from "./components/PostItem"
 import Loader from "../../components/Loader"
+import ServerError from "../../components/ServerError"
+import NoPosts from "../../components/NoPosts"
 
 const initialState = {
     posts: [],
@@ -87,7 +90,7 @@ function News() {
                             {state.isFetching ? (
                                 <Loader />
                             ) : state.hasError ? (
-                                <p>An error ocurred!</p>
+                                <ServerError />
                             ) : (
                                 <>
                                     {state.posts.length > 0 ? (
@@ -95,7 +98,7 @@ function News() {
                                             <PostItem key={post.id} post={post} />
                                         ))
                                     ) : (
-                                        <p>No posts yet!</p>
+                                        <NoPosts />
                                     )}
                                 </>
                             )}

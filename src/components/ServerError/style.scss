@@ -1,0 +1,25 @@
+@import "../../Variables.scss";
+
+.server-error {
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    svg.icon {
+      font-size: 2rem;
+      color: $danger-color;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+    .server-error {
+        .title {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+    }
+}
