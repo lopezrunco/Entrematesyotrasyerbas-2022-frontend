@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 import { FETCH_POSTS_FAILURE, FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS } from './action-types'
 import { apiUrl } from '../../utils/api-url'
+import Loader from '../Loader'
 import PostItem from "./PostItem"
 
 const initialState = {
@@ -77,7 +78,7 @@ function HomeNews() {
                 <section className="container">
                     <article className="row posts-container">
                         {state.isFetching ? (
-                            <p>Loading posts...</p>
+                            <Loader />
                         ) : state.hasError ? (
                             <p>An error ocurred!</p>
                         ) : (

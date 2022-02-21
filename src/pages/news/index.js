@@ -5,6 +5,7 @@ import { FETCH_POSTS_FAILURE, FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS } from '.
 import { apiUrl } from '../../utils/api-url'
 import PageTitle from "../../components/PageTitle"
 import PostItem from "./components/PostItem"
+import Loader from "../../components/Loader"
 
 const initialState = {
     posts: [],
@@ -84,7 +85,7 @@ function News() {
                     <section className="container">
                         <article className="row posts-container">
                             {state.isFetching ? (
-                                <p>Loading posts...</p>
+                                <Loader />
                             ) : state.hasError ? (
                                 <p>An error ocurred!</p>
                             ) : (
