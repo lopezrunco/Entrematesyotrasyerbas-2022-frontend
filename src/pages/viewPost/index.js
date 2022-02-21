@@ -109,7 +109,19 @@ function ViewPost() {
                                                 </div>
                                                 <div className="subcontent">
                                                     {state.post.subcontent.map(subcontentP => {
-                                                        return <p>{subcontentP}</p>
+                                                        return (
+                                                            subcontentP.map((subContentPChildren, index) => {
+                                                                if (index === 0) {
+                                                                    return (
+                                                                        <h4>{subContentPChildren}</h4>
+                                                                    )
+                                                                } else {
+                                                                    return (
+                                                                        <p>{subContentPChildren}</p>
+                                                                    )
+                                                                }
+                                                            })
+                                                        )
                                                     })}
                                                 </div>
                                                 <div className="secondary-images">
