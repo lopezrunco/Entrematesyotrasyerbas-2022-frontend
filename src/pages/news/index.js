@@ -1,5 +1,6 @@
-import { useEffect, useReducer } from "react"
+import { useEffect, useReducer, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { ChevronLeft, ChevronRight } from "react-bootstrap-icons"
 
 import { FETCH_POSTS_FAILURE, FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS } from './action-types'
 import { apiUrl } from '../../utils/api-url'
@@ -44,7 +45,17 @@ const reducer = (state, action) => {
 
 function News() {
     const navigate = useNavigate()
+
     const [state, dispatch] = useReducer(reducer, initialState)
+    const [page, setPage] = useState(1)
+    const [itemsPerPage] = useState(12)
+
+    const prevPage = () => {
+        setPage(page - 1)
+    }
+    const nextPage = () => {
+        setPage(page + 1)
+    }
 
     // On component mount, fetch and render the posts
     useEffect(() => {
@@ -52,7 +63,7 @@ function News() {
             type: FETCH_POSTS_REQUEST
         })
 
-        fetch(apiUrl('posts'), {
+        fetch(apiUrl(`posts?page=${page}&itemsPerPage=${itemsPerPage}`), {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -74,7 +85,7 @@ function News() {
                 type: FETCH_POSTS_FAILURE
             })
         })
-    }, [navigate])
+    }, [navigate, page, itemsPerPage])
 
     return (
         <>
@@ -84,27 +95,33 @@ function News() {
                 imgClassName='news'
             />
 
-                <main className="news-page">
-                    <section className="container">
-                        <article className="row posts-container">
-                            {state.isFetching ? (
-                                <Loader />
-                            ) : state.hasError ? (
-                                <ServerError />
-                            ) : (
-                                <>
-                                    {state.posts.length > 0 ? (
-                                        state.posts.map(post => (
-                                            <PostItem key={post.id} post={post} />
-                                        ))
-                                    ) : (
-                                        <NoPosts />
-                                    )}
-                                </>
-                            )}
-                        </article>
-                    </section>
-                </main>
+            <main className="news-page">
+                <section className="container">
+                    <article className="row posts-container">
+                        {state.isFetching ? (
+                            <Loader />
+                        ) : state.hasError ? (
+                            <ServerError />
+                        ) : (
+                            <>
+                                {state.posts.length > 0 ? (
+                                    state.posts.map(post => (
+                                        <PostItem key={post.id} post={post} />
+                                    ))
+                                ) : (
+                                    <NoPosts />
+                                )}
+                            </>
+                        )}
+                    </article>
+                    <div className="posts-pagination">
+                        {page > 1 && (
+                            <div onClick={prevPage}><ChevronLeft /> Anterior</div>
+                        )}
+                        <div onClick={nextPage}>Siguiente <ChevronRight /></div>
+                    </div>
+                </section>
+            </main>
         </>
     )
 }
