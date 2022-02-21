@@ -1,0 +1,51 @@
+@import "../../Variables.scss";
+
+.not-found-page {
+  .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    svg {
+      font-size: 3rem;
+      color: $danger-color;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      &:hover {
+        color: $secondary-color;
+      }
+
+      &::before {
+        content: "- ";
+      }
+    }
+  }
+
+  .not-found-img {
+    max-height: 20rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .not-found-page {
+    .title,
+    .links {
+      justify-content: flex-start;
+    }
+
+    .links {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+}
