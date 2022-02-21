@@ -1,0 +1,19 @@
+@import "../../Variables.scss";
+
+.contact-page {
+  .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid $border-color;
+    padding: 3rem 1rem;
+    margin-bottom: 1rem;
+
+    .icon {
+      font-size: 2rem;
+      color: $secondary-color;
+    }
+  }
+}
