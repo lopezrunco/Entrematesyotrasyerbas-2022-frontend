@@ -19,8 +19,8 @@ function HomeSlider() {
                     alt="First slide"
                 />
                 <Carousel.Caption className='carousel-caption'>
-                    <img className='desktop-logo' src={desktopLogo} />
-                    <img className='mobile-logo' src={mobileLogo} />
+                    <img className='desktop-logo' src={desktopLogo} alt='Entre mates y otras yerbas' />
+                    <img className='mobile-logo' src={mobileLogo} alt='Entre mates y otras yerbas' />
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -31,8 +31,8 @@ function HomeSlider() {
                 />
 
                 <Carousel.Caption className='carousel-caption'>
-                    <img className='desktop-logo' src={desktopLogo} />
-                    <img className='mobile-logo' src={mobileLogo} />
+                    <img className='desktop-logo' src={desktopLogo} alt='Entre mates y otras yerbas' />
+                    <img className='mobile-logo' src={mobileLogo} alt='Entre mates y otras yerbas' />
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -43,8 +43,8 @@ function HomeSlider() {
                 />
 
                 <Carousel.Caption className='carousel-caption'>
-                    <img className='desktop-logo' src={desktopLogo} />
-                    <img className='mobile-logo' src={mobileLogo} />
+                    <img className='desktop-logo' src={desktopLogo} alt='Entre mates y otras yerbas' />
+                    <img className='mobile-logo' src={mobileLogo} alt='Entre mates y otras yerbas' />
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

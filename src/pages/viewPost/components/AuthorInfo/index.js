@@ -5,7 +5,7 @@ function AuthorInfo() {
     return (
         <div className="author-info">
             <div className='avatar'>
-                <img src={emyoyAvatar} />
+                <img src={emyoyAvatar} alt='Entre mates y otras yerbas' />
             </div>
             <h5>EMYOY</h5>
             <small>entrematesyotrasyerbas@gmail.com</small>

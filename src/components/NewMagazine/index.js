@@ -9,7 +9,7 @@ function NewMagazine() {
             <article className="container">
                 <div className="row">
                     <div className="col-lg-4 last-number-img">
-                        <img src={lastNumber} />
+                        <img src={lastNumber} alt='Entre mates y otras yerbas' />
                     </div>
                     <div className="col-lg-8 info">
                         <h3>Ya salió la nueva edición de la revista Entre mates y otras yerbas</h3>

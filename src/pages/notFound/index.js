@@ -32,7 +32,7 @@ function NotFound() {
                         </div>
 
                         <div className="col-lg-6">
-                            <img className='not-found-img' src={NotFoundImg} />
+                            <img className='not-found-img' src={NotFoundImg} alt='Entre mates y otras yerbas' />
                         </div>
 
                     </article>

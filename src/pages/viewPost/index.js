@@ -94,7 +94,7 @@ function ViewPost() {
                                         {state.post && (
                                             <>
                                                 <div className="img-wrapper">
-                                                    <img src={state.post.primaryImageUrl} />
+                                                    <img src={state.post.primaryImageUrl} alt='Entre mates y otras yerbas' />
                                                 </div>
                                                 <h2>{state.post.title}</h2>
                                                 <div className="post-info">
@@ -126,7 +126,7 @@ function ViewPost() {
                                                 </div>
                                                 <div className="secondary-images">
                                                     {state.post.secondaryImagesUrls.map((imgUrl, imgUrlIndex) => {
-                                                        return <img key={imgUrlIndex} src={imgUrl} />
+                                                        return <img key={imgUrlIndex} src={imgUrl} alt='Entre mates y otras yerbas' />
                                                     })}
                                                 </div>
                                                 <p className="tags">

@@ -14,7 +14,7 @@ function PostItem({ post }) {
         <div className="col-lg-4">
             <div className="post-wrapper">
                 <div className="img-wrapper">
-                    <img onClick={viewPost} src={post.primaryImageUrl} />
+                    <img onClick={viewPost} src={post.primaryImageUrl} alt='Entre mates y otras yerbas' />
                 </div>
                 <div className="info-wrapper">
                     <h3 onClick={viewPost}>{post.title}</h3>

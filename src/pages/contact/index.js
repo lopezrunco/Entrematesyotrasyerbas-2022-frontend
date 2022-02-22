@@ -30,14 +30,14 @@ function Contact() {
                         </div>
 
                         <div className="col-sm-6 col-lg-4 col-xl-3">
-                            <a href='tel:2900 7643' target='_blank' className="box">
+                            <a href='tel:2900 7643' target='_blank' rel="noreferrer" className="box">
                                 <TelephoneFill className='icon' />
                                 <p>2900 7643</p>
                             </a>
                         </div>
 
                         <div className="col-sm-6 col-lg-4 col-xl-3">
-                            <a href='mailto:entrematesyotrasyerbas@gmail.com' target='_blank' className="box">
+                            <a href='mailto:entrematesyotrasyerbas@gmail.com' target='_blank' rel="noreferrer" className="box">
                                 <Envelope className='icon' />
                                 <p>entrematesyotrasyerbas@gmail.com</p>
                             </a>
@@ -51,7 +51,7 @@ function Contact() {
                         </div>
 
                         <div className="col-sm-6 col-lg-4 col-xl-3">
-                            <a href='https://www.youtube.com/channel/UCn8eMAereXltvTtj-OLKEkQ' target='_blank' className="box">
+                            <a href='https://www.youtube.com/channel/UCn8eMAereXltvTtj-OLKEkQ' target='_blank' rel="noreferrer" className="box">
                                 <Youtube className='icon' />
                                 <p>Entre mates y Otras yerbas</p>
                             </a>
