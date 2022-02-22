@@ -44,7 +44,7 @@ function Contact() {
                         </div>
 
                         <div className="col-sm-6 col-lg-4 col-xl-3 offset-xl-3">
-                            <a href='https://es-la.facebook.com/Entrematesyotrasyerbas/' target='_blank' className="box">
+                            <a href='https://es-la.facebook.com/Entrematesyotrasyerbas/' target='_blank' rel="noreferrer" className="box">
                                 <Facebook className='icon' />
                                 <p>Entrematesyotrasyerbas</p>
                             </a>
