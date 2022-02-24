@@ -1,4 +1,4 @@
-// Return the request string depemding the route received
+// Return the request string depending the route received
 export const apiUrl = (path) => {
     if (!path.startsWith('/')) {
         path = `/${path}`

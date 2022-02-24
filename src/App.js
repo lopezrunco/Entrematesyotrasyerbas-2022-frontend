@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 
 import Contact from './pages/contact'
+import NewsByTag from './pages/newsByTag'
 import NewsByCategory from './pages/newsByCategory'
 import News from './pages/news'
 import ViewPost from './pages/viewPost'
@@ -27,6 +28,7 @@ function App() {
         <Route path='/novedades' element={<News />} />
         <Route path='/posts/:id' element={<ViewPost />} />
         <Route path='/posts/category/:category' element={<NewsByCategory />} />
+        <Route path='/posts/tag/:tag' element={<NewsByTag />} />
         <Route path='/revista' element={<Magazine />} />
         <Route path='/' element={<Home />} />
         <Route path='*' element={<NotFound />} />

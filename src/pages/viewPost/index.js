@@ -9,6 +9,7 @@ import BlogAds from "./components/BlogAds"
 import FollowUs from "./components/FollowUs"
 
 import './style.scss'
+import TagButton from "../../components/TagButton"
 
 const initialState = {
     post: undefined,
@@ -46,7 +47,7 @@ function ViewPost() {
     const { id } = useParams()
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    const ViewCategory = () => {
+    const ViewByCategory = () => {
         navigate(`/posts/category/${state.post.category}`)
     }
 
@@ -104,7 +105,7 @@ function ViewPost() {
                                                 <div className="post-info">
                                                     <span className="author">Autor: {state.post.author}</span>
                                                     <span>/</span>
-                                                    <span className="category" onClick={ViewCategory}>Categoría: {state.post.category}</span>
+                                                    <span className="category" onClick={ViewByCategory}>Categoría: {state.post.category}</span>
                                                 </div>
                                                 <div className="content">
                                                     {state.post.content.map((contentP, contentPIndex) => {
@@ -133,11 +134,13 @@ function ViewPost() {
                                                         return <img key={imgUrlIndex} src={imgUrl} alt='Entre mates y otras yerbas' />
                                                     })}
                                                 </div>
-                                                <p className="tags">
-                                                    {state.post.tags.map((tag, tagIndex) => {
-                                                        return <button className="tag" key={tagIndex}>{tag}</button>
-                                                    })}
-                                                </p>
+                                                <div className="tags">
+                                                    {state.post.tags.length > 0 && (
+                                                        state.post.tags.map((tagElement, tagIndex) => {
+                                                            return <TagButton tag={tagElement} key={tagIndex} />
+                                                        })
+                                                    )}
+                                                </div>
                                                 <div className="links">
                                                     {state.post.links.map((link, linkIndex) => {
                                                         return <p key={linkIndex}>{link}</p>
