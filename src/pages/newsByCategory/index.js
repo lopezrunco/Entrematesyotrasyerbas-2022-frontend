@@ -63,7 +63,7 @@ function NewsByCategory() {
             type: FETCH_POSTS_REQUEST
         })
 
-        fetch(apiUrl(`/posts/category/${category}`), {
+        fetch(apiUrl(`posts/category/${category}?page=${page}&itemsPerPage=${itemsPerPage}`), {
             headers: {
                 'Content-type': 'application/json'
             }

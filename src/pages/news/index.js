@@ -45,7 +45,6 @@ const reducer = (state, action) => {
 
 function News() {
     const navigate = useNavigate()
-
     const [state, dispatch] = useReducer(reducer, initialState)
     const [page, setPage] = useState(1)
     const [itemsPerPage] = useState(12)
