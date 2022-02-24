@@ -3,13 +3,13 @@ import { useParams } from 'react-router-dom'
 import { ChevronLeft, ChevronRight, Folder2Open } from 'react-bootstrap-icons'
 
 import { apiUrl } from '../../utils/api-url'
-import { FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS, FETCH_POSTS_FAILURE } from './action-types'
+import { FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS, FETCH_POSTS_FAILURE } from '../../utils/posts-action-types'
 
 import Loader from '../../components/Loader'
 import PageTitle from '../../components/PageTitle'
 import ServerError from '../../components/ServerError'
 import NoPosts from '../../components/NoPosts'
-import PostItem from './PostItem'
+import PostItem from '../../components/PostItem'
 
 const initialState = {
     posts: [],

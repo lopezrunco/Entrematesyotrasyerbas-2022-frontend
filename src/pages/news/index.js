@@ -2,11 +2,11 @@ import { useEffect, useReducer, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { ChevronLeft, ChevronRight } from "react-bootstrap-icons"
 
-import { FETCH_POSTS_FAILURE, FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS } from './action-types'
+import { FETCH_POSTS_FAILURE, FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS } from '../../utils/posts-action-types'
 import { apiUrl } from '../../utils/api-url'
 
 import PageTitle from "../../components/PageTitle"
-import PostItem from "./components/PostItem"
+import PostItem from "../../components/PostItem"
 import Loader from "../../components/Loader"
 import ServerError from "../../components/ServerError"
 import NoPosts from "../../components/NoPosts"

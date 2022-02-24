@@ -1,7 +1,7 @@
 import { useEffect, useReducer } from "react"
 import { useNavigate } from "react-router-dom"
 
-import { FETCH_POSTS_FAILURE, FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS } from './action-types'
+import { FETCH_POSTS_FAILURE, FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS } from '../../utils/posts-action-types'
 import { apiUrl } from '../../utils/api-url'
 
 import Loader from '../Loader'
