@@ -22,6 +22,14 @@
     .author {
       padding: 0;
     }
+
+    span.category {
+      cursor: pointer;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
   }
 
   .content {

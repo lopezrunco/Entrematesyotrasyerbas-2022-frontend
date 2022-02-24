@@ -46,6 +46,10 @@ function ViewPost() {
     const { id } = useParams()
     const [state, dispatch] = useReducer(reducer, initialState)
 
+    const ViewCategory = () => {
+        navigate(`/posts/category/${state.post.category}`)
+    }
+
     useEffect(() => {
         dispatch({
             type: FETCH_POST_REQUEST
@@ -100,11 +104,11 @@ function ViewPost() {
                                                 <div className="post-info">
                                                     <span className="author">Autor: {state.post.author}</span>
                                                     <span>/</span>
-                                                    <span className="category">Categoria: {state.post.category}</span>
+                                                    <span className="category" onClick={ViewCategory}>Categoría: {state.post.category}</span>
                                                 </div>
                                                 <div className="content">
-                                                    {state.post.content.map(contentP => {
-                                                        return <p>{contentP}</p>
+                                                    {state.post.content.map((contentP, contentPIndex) => {
+                                                        return <p key={contentPIndex}>{contentP}</p>
                                                     })}
                                                 </div>
                                                 <div className="subcontent">
@@ -113,11 +117,11 @@ function ViewPost() {
                                                             subcontentP.map((subContentPChildren, index) => {
                                                                 if (index === 0) {
                                                                     return (
-                                                                        <h4>{subContentPChildren}</h4>
+                                                                        <h4 key={index}>{subContentPChildren}</h4>
                                                                     )
                                                                 } else {
                                                                     return (
-                                                                        <p>{subContentPChildren}</p>
+                                                                        <p key={index}>{subContentPChildren}</p>
                                                                     )
                                                                 }
                                                             })
