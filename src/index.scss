@@ -175,6 +175,12 @@ span.author {
   font-family: "Signika", sans-serif;
   color: $medium-dark-bg;
   text-align: left;
+  cursor: pointer;
+  transition: $main-transition;
+
+  &:hover {
+    color: $primary-color;
+  }
 }
 
 h1 {

@@ -1,6 +1,7 @@
 import { Person, ChevronRight } from "react-bootstrap-icons"
 import { useNavigate } from "react-router-dom"
 
+import TagButton from "../TagButton"
 import './style.scss'
 
 function PostItem({ post }) {
@@ -10,6 +11,10 @@ function PostItem({ post }) {
         navigate(`/posts/${post.id}`)
     }
 
+    const ViewByCategory = () => {
+        navigate(`/posts/category/${post.category}`)
+    }
+
     return (
         <div className="col-lg-4">
             <div className="post-wrapper">
@@ -17,14 +22,16 @@ function PostItem({ post }) {
                     <img onClick={viewPost} src={post.primaryImageUrl} alt='Entre mates y otras yerbas' />
                 </div>
                 <div className="info-wrapper">
-                    <span className="category">{post.category}</span>
+                    <span className="category" onClick={ViewByCategory}>{post.category}</span>
                     <h3 onClick={viewPost}>{post.title}</h3>
                     <p>{post.content[0]}</p>
-                    <p className="tags">
-                        {post.tags.map((tag, index) => {
-                            return <button className="tag" key={index}>{tag}</button>
-                        })}
-                    </p>
+                    <div className="tags">
+                        {post.tags.length > 0 && (
+                            post.tags.map((tagElement, tagIndex) => {
+                                return <TagButton tag={tagElement} key={tagIndex} />
+                            })
+                        )}
+                    </div>
                     <button className="read-more" onClick={viewPost}>Leer más <ChevronRight /></button>
                     <span className="author"><Person /> Autor: {post.author}</span>
                 </div>
