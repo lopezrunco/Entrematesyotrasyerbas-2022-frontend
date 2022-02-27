@@ -7,7 +7,7 @@ function ServerError() {
         <div className="server-error">
             <div className="title">
                 <EmojiDizzyFill className="icon" />
-                <h3>Error al conectar el servidor</h3>
+                <h3>Error al conectar al servidor</h3>
             </div>
             <p>Algo anduvo mal. Trate de refrescar el navegador o compruebe su conexión a internet.</p>
         </div>

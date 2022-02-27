@@ -15,6 +15,10 @@ function PostItem({ post }) {
         navigate(`/posts/category/${post.category}`)
     }
 
+    const ViewByAuthor = () => {
+        navigate(`/posts/author/${post.author}`)
+    }
+
     return (
         <div className="col-lg-4">
             <div className="post-wrapper">
@@ -33,7 +37,7 @@ function PostItem({ post }) {
                         )}
                     </div>
                     <button className="read-more" onClick={viewPost}>Leer más <ChevronRight /></button>
-                    <span className="author"><Person /> Autor: {post.author}</span>
+                    <span className="author" onClick={ViewByAuthor}><Person /> Autor: {post.author}</span>
                 </div>
             </div>
         </div>

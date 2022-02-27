@@ -7,9 +7,9 @@ import { apiUrl } from "../../utils/api-url"
 import AuthorInfo from "./components/AuthorInfo"
 import BlogAds from "./components/BlogAds"
 import FollowUs from "./components/FollowUs"
+import TagButton from "../../components/TagButton"
 
 import './style.scss'
-import TagButton from "../../components/TagButton"
 
 const initialState = {
     post: undefined,
@@ -49,6 +49,10 @@ function ViewPost() {
 
     const ViewByCategory = () => {
         navigate(`/posts/category/${state.post.category}`)
+    }
+
+    const ViewByAuthor = () => {
+        navigate(`/posts/author/${state.post.author}`)
     }
 
     useEffect(() => {
@@ -103,7 +107,7 @@ function ViewPost() {
                                                 </div>
                                                 <h2>{state.post.title}</h2>
                                                 <div className="post-info">
-                                                    <span className="author">Autor: {state.post.author}</span>
+                                                    <span className="author" onClick={ViewByAuthor}>Autor: {state.post.author}</span>
                                                     <span>/</span>
                                                     <span className="category" onClick={ViewByCategory}>Categoría: {state.post.category}</span>
                                                 </div>

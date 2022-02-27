@@ -1,15 +1,15 @@
-import { useEffect, useReducer, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { ChevronLeft, ChevronRight, Folder2Open } from 'react-bootstrap-icons'
+import { useEffect, useReducer, useState } from "react"
+import { ChevronLeft, ChevronRight, Folder2Open } from "react-bootstrap-icons"
+import { useParams } from "react-router-dom"
 
-import { apiUrl } from '../../utils/api-url'
-import { FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS, FETCH_POSTS_FAILURE } from '../../utils/posts-action-types'
+import { apiUrl } from "../../utils/api-url"
+import { FETCH_POSTS_FAILURE, FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS } from "../../utils/posts-action-types"
 
-import Loader from '../../components/Loader'
-import PageTitle from '../../components/PageTitle'
-import ServerError from '../../components/ServerError'
-import NoPosts from '../../components/NoPosts'
-import PostItem from '../../components/PostItem'
+import Loader from "../../components/Loader"
+import NoPosts from "../../components/NoPosts"
+import PageTitle from "../../components/PageTitle"
+import PostItem from "../../components/PostItem"
+import ServerError from "../../components/ServerError"
 
 const initialState = {
     posts: [],
@@ -17,7 +17,7 @@ const initialState = {
     hasError: false
 }
 
-// Posts by category reducer
+// Posts by author reducer
 const reducer = (state, action) => {
     switch (action.type) {
         case FETCH_POSTS_REQUEST:
@@ -43,8 +43,8 @@ const reducer = (state, action) => {
     }
 }
 
-function NewsByCategory() {
-    const { category } = useParams()
+function NewsByAuthor() {
+    const { author } = useParams()
     const [state, dispatch] = useReducer(reducer, initialState)
     const [page, setPage] = useState(1)
     const [itemsPerPage] = useState(12)
@@ -63,10 +63,10 @@ function NewsByCategory() {
             type: FETCH_POSTS_REQUEST
         })
 
-        fetch(apiUrl(`posts/category/${category}?page=${page}&itemsPerPage=${itemsPerPage}`), {
-                headers: {
-                    'Content-type': 'application/json'
-                }
+        fetch(apiUrl(`posts/author/${author}?page=${page}&itemsPerPage=${itemsPerPage}`), {
+            headers: {
+                'Content-type': 'application/json'
+            }
         }).then(response => {
             if (response.ok) {
                 return response.json()
@@ -82,7 +82,7 @@ function NewsByCategory() {
             console.error('Error fetching the posts', error)
 
             dispatch({
-                type: FETCH_POSTS_FAILURE,
+                type: FETCH_POSTS_FAILURE
             })
         })
     }, [page, itemsPerPage])
@@ -95,15 +95,15 @@ function NewsByCategory() {
                 imgClassName='general'
             />
 
-            <main className='news-page'>
-                <section className='container'>
+            <main className="news-page">
+                <section className="container">
 
                     <div className='section-title'>
                         <Folder2Open className='icon' />
-                        <h3>Artículos de la categoría {category}</h3>
+                        <h3>Artículos del autor {author}</h3>
                     </div>
 
-                    <article className='row posts-container'>
+                    <article className="row posts-container">
                         {state.isFetching ? (
                             <Loader />
                         ) : state.hasError ? (
@@ -134,4 +134,4 @@ function NewsByCategory() {
     )
 }
 
-export default NewsByCategory
+export default NewsByAuthor

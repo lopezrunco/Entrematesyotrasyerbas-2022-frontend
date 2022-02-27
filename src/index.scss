@@ -175,12 +175,6 @@ span.author {
   font-family: "Signika", sans-serif;
   color: $medium-dark-bg;
   text-align: left;
-  cursor: pointer;
-  transition: $main-transition;
-
-  &:hover {
-    color: $primary-color;
-  }
 }
 
 h1 {
@@ -240,6 +234,12 @@ span.author {
   text-transform: uppercase;
   font-weight: 500;
   color: $light-text;
+  cursor: pointer;
+  transition: $main-transition;
+
+  &:hover {
+    color: $primary-color;
+  }
 }
 
 span.author {
