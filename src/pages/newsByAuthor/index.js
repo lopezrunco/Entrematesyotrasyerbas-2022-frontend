@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from "react"
-import { ChevronLeft, ChevronRight, Folder2Open } from "react-bootstrap-icons"
+import { ChevronLeft, ChevronRight, PersonFill } from "react-bootstrap-icons"
 import { useParams } from "react-router-dom"
 
 import { apiUrl } from "../../utils/api-url"
@@ -99,7 +99,7 @@ function NewsByAuthor() {
                 <section className="container">
 
                     <div className='section-title'>
-                        <Folder2Open className='icon' />
+                        <PersonFill className='icon' />
                         <h3>Artículos del autor {author}</h3>
                     </div>
 

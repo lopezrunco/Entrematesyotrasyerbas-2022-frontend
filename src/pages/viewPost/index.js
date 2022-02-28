@@ -2,6 +2,7 @@ import { useEffect, useReducer } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 
 import { FETCH_POST_FAILURE, FETCH_POST_REQUEST, FETCH_POST_SUCCESS } from './action-types'
+
 import PageTitle from "../../components/PageTitle"
 import { apiUrl } from "../../utils/api-url"
 import AuthorInfo from "./components/AuthorInfo"
@@ -9,6 +10,7 @@ import BlogAds from "./components/BlogAds"
 import FollowUs from "./components/FollowUs"
 import TagButton from "../../components/TagButton"
 import Categories from "../../components/Categories"
+import Tags from "../../components/Tags"
 
 import './style.scss'
 
@@ -166,6 +168,7 @@ function ViewPost() {
                                 <Categories />
                                 <FollowUs />
                                 <BlogAds />
+                                <Tags />
                             </section>
                         </aside>
                     </div>

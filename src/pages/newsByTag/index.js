@@ -1,6 +1,6 @@
 import { useEffect, useReducer, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { ChevronLeft, ChevronRight, Folder2Open } from 'react-bootstrap-icons'
+import { ChevronLeft, ChevronRight, TagFill } from 'react-bootstrap-icons'
 
 import { apiUrl } from '../../utils/api-url'
 import { FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS, FETCH_POSTS_FAILURE } from '../../utils/posts-action-types'
@@ -99,7 +99,7 @@ function NewsByTag() {
                 <section className='container'>
 
                     <div className='section-title'>
-                        <Folder2Open className='icon' />
+                        <TagFill className='icon' />
                         <h3>Artículos con la etiqueta {tag}</h3>
                     </div>
 
