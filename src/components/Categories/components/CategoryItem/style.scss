@@ -1,0 +1,26 @@
+@import "../../../../Variables.scss";
+
+.categories-list {
+  .category-item {
+      margin: .5rem 0;
+    cursor: pointer;
+    transition: $main-transition;
+    color: $dark-text;
+
+    &:hover {
+      color: $primary-color;
+      transform: translateX(0.2rem);
+    }
+
+    .count {
+      color: $light-text;
+      margin-left: .5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .categories-list {
+    text-align: left;
+  }
+}

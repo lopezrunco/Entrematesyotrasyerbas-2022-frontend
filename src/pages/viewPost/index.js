@@ -8,6 +8,7 @@ import AuthorInfo from "./components/AuthorInfo"
 import BlogAds from "./components/BlogAds"
 import FollowUs from "./components/FollowUs"
 import TagButton from "../../components/TagButton"
+import Categories from "../../components/Categories"
 
 import './style.scss'
 
@@ -162,6 +163,7 @@ function ViewPost() {
                         <aside>
                             <section className="news-aside">
                                 <AuthorInfo />
+                                <Categories />
                                 <FollowUs />
                                 <BlogAds />
                             </section>

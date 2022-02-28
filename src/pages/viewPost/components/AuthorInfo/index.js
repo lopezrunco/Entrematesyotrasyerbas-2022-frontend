@@ -9,7 +9,7 @@ function AuthorInfo() {
             </div>
             <h5>EMYOY</h5>
             <small>entrematesyotrasyerbas@gmail.com</small>
-            <p>Nosotros no aconsejamos, ni recetamos. Simplemente como periodistas, compartimos con la gente, el uso, dosis, fórmulas y virtudes curativas de las hierbas medicinales, que forman parte del conocimiento empírico de los pueblos y la comprobación luego de la ciencia.</p>
+            <p>De lunes a viernes de 00 a 03 am en Radio Carve con la conducción de Miguel Cabrera</p>
         </div>
     )
 }
