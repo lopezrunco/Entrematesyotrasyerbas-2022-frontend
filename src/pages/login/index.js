@@ -63,7 +63,7 @@ function Login() {
                 type: LOGIN,
                 payload: data
             })
-            navigate('/')
+            navigate('/administration')
         }).catch(error => {
             console.error(error)
             setData({

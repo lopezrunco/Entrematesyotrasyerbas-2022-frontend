@@ -18,6 +18,8 @@ import Nav from './components/Nav'
 import Bottom from './components/Bottom'
 import Footer from './components/Footer'
 import GoToTop from './components/GoToTop'
+import Administration from './pages/administration'
+import RequireAuth from './components/RequireAuth'
 
 import { ENABLE_MFA, HIDE_LOADER, LOGIN, LOGOUT, REFRESH_TOKEN, SHOW_LOADER } from './utils/general-action-types'
 
@@ -121,27 +123,125 @@ function App() {
   return (
     <AuthContext.Provider value={{ state, dispatch }} >
       <div className="App">
-        <Nav />
         <Routes>
-          <Route path='/sesion-finalizada' element={<LoggedOut />} />
-          <Route path='/contacto' element={<Contact />} />
-          <Route path='/novedades' element={<News />} />
-          <Route path='/posts/:id' element={<ViewPost />} />
-          <Route path='/posts/category/:category' element={<NewsByCategory />} />
-          <Route path='/posts/tag/:tag' element={<NewsByTag />} />
-          <Route path='/posts/author/:author' element={<NewsByAuthor />} />
-          <Route path='/revista' element={<Magazine />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/' element={<Home />} />
-          <Route path='*' element={<NotFound />} />
+          <Route path='/Administration' element={
+            <RequireAuth>
+              <Administration />
+            </RequireAuth>
+          } />
+          <Route path='/sesion-finalizada' element={
+            <>
+              <Nav />
+              <LoggedOut />
+              <Bottom />
+              <Footer />
+              <GoToTop />
+              <ScrollToTopOnNavigation />
+            </>
+          } />
+          <Route path='/contacto' element={
+            <>
+              <Nav />
+              <Contact />
+              <Bottom />
+              <Footer />
+              <GoToTop />
+              <ScrollToTopOnNavigation />
+            </>
+          } />
+          <Route path='/novedades' element={
+            <>
+              <Nav />
+              <News />
+              <Bottom />
+              <Footer />
+              <GoToTop />
+              <ScrollToTopOnNavigation />
+            </>
+          } />
+          <Route path='/posts/:id' element={
+            <>
+              <Nav />
+              <ViewPost />
+              <Bottom />
+              <Footer />
+              <GoToTop />
+              <ScrollToTopOnNavigation />
+            </>
+          } />
+          <Route path='/posts/category/:category' element={
+            <>
+              <Nav />
+              <NewsByCategory />
+              <Bottom />
+              <Footer />
+              <GoToTop />
+              <ScrollToTopOnNavigation />
+            </>
+          } />
+          <Route path='/posts/tag/:tag' element={
+            <>
+              <Nav />
+              <NewsByTag />
+              <Bottom />
+              <Footer />
+              <GoToTop />
+              <ScrollToTopOnNavigation />
+            </>
+          } />
+          <Route path='/posts/author/:author' element={
+            <>
+              <Nav />
+              <NewsByAuthor />
+              <Bottom />
+              <Footer />
+              <GoToTop />
+              <ScrollToTopOnNavigation />
+            </>
+          } />
+          <Route path='/revista' element={
+            <>
+              <Nav />
+              <Magazine />
+              <Bottom />
+              <Footer />
+              <GoToTop />
+              <ScrollToTopOnNavigation />
+            </>
+          } />
+          <Route path='/login' element={
+            <>
+              <Nav />
+              <Login />
+              <Bottom />
+              <Footer />
+              <GoToTop />
+              <ScrollToTopOnNavigation />
+            </>
+          } />
+          <Route path='/' element={
+            <>
+              <Nav />
+              <Home />
+              <Bottom />
+              <Footer />
+              <GoToTop />
+              <ScrollToTopOnNavigation />
+            </>
+          } />
+          <Route path='*' element={
+            <>
+              <Nav />
+              <NotFound />
+              <Bottom />
+              <Footer />
+              <GoToTop />
+              <ScrollToTopOnNavigation />
+            </>
+          } />
         </Routes>
-        <Bottom />
-        <Footer />
-        <GoToTop />
-        <ScrollToTopOnNavigation />
       </div>
     </AuthContext.Provider>
-
   )
 }
 
