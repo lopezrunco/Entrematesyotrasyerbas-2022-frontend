@@ -1,5 +1,7 @@
+import { createContext, useEffect, useReducer } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
+import LoggedOut from './pages/loggedOut'
 import Contact from './pages/contact'
 import NewsByAuthor from './pages/newsByAuthor'
 import NewsByTag from './pages/newsByTag'
@@ -9,6 +11,7 @@ import ViewPost from './pages/viewPost'
 import Magazine from './pages/magazine'
 import Home from './pages/home'
 import NotFound from './pages/notFound'
+import Login from './pages/login'
 
 import ScrollToTopOnNavigation from './components/ScrollToTopOnNavigation'
 import Nav from './components/Nav'
@@ -16,32 +19,129 @@ import Bottom from './components/Bottom'
 import Footer from './components/Footer'
 import GoToTop from './components/GoToTop'
 
+import { ENABLE_MFA, HIDE_LOADER, LOGIN, LOGOUT, REFRESH_TOKEN, SHOW_LOADER } from './utils/general-action-types'
+
 import './App.scss'
 
+export const AuthContext = createContext()
+
+const initialState = {
+  isAuthenticated: !!localStorage.getItem('token'),
+  user: JSON.parse(localStorage.getItem('user')),
+  token: localStorage.getItem('token'),
+  refreshToken: localStorage.getItem('refreshToken'),
+  showingLoader: false
+}
+
+// Login actions reducer
+const reducer = (state, action) => {
+  switch (action.type) {
+    case LOGIN:
+      localStorage.setItem('user', JSON.stringify(action.payload.user))
+      localStorage.setItem('token', action.payload.user.token)
+      localStorage.setItem('refreshToken', action.payload.user.refreshToken)
+
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: action.payload.user,
+        token: action.payload.user.token,
+        refreshToken: action.payload.user.refreshToken
+      }
+
+    case REFRESH_TOKEN:
+      localStorage.setItem('token', action.payload.token)
+      localStorage.setItem('refreshToken', action.payload.refreshToken)
+
+      return {
+        ...state,
+        token: action.payload.token,
+        refreshToken: action.payload.refreshToken
+      }
+
+    case LOGOUT:
+      localStorage.clear()
+
+      return {
+        ...state,
+        isAuthenticated: false,
+        user: null,
+        token: null,
+        refreshToken: null
+      }
+
+    case ENABLE_MFA:
+      const user = {
+        ...state.user,
+        mfaEnabled: true
+      }
+
+      localStorage.setItem('user', JSON.stringify(user))
+
+      return {
+        ...state,
+        user
+      }
+
+    case SHOW_LOADER:
+      return {
+        ...state,
+        showingLoader: true
+      }
+
+    case HIDE_LOADER:
+      return {
+        ...state,
+        showingLoader: false
+      }
+
+    default:
+      return state
+  }
+}
+
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'))
+    const token = localStorage.getItem('token')
+
+    if (user && token) {
+      dispatch({
+        type: LOGIN,
+        payload: {
+          user,
+          token
+        }
+      })
+    }
+  }, [])
+
   return (
-    <div className="App">
+    <AuthContext.Provider value={{ state, dispatch }} >
+      <div className="App">
+        <Nav />
+        <Routes>
+          <Route path='/sesion-finalizada' element={<LoggedOut />} />
+          <Route path='/contacto' element={<Contact />} />
+          <Route path='/novedades' element={<News />} />
+          <Route path='/posts/:id' element={<ViewPost />} />
+          <Route path='/posts/category/:category' element={<NewsByCategory />} />
+          <Route path='/posts/tag/:tag' element={<NewsByTag />} />
+          <Route path='/posts/author/:author' element={<NewsByAuthor />} />
+          <Route path='/revista' element={<Magazine />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/' element={<Home />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+        <Bottom />
+        <Footer />
+        <GoToTop />
+        <ScrollToTopOnNavigation />
+      </div>
+    </AuthContext.Provider>
 
-      <Nav />
-
-      <Routes>
-        <Route path='/contacto' element={<Contact />} />
-        <Route path='/novedades' element={<News />} />
-        <Route path='/posts/:id' element={<ViewPost />} />
-        <Route path='/posts/category/:category' element={<NewsByCategory />} />
-        <Route path='/posts/tag/:tag' element={<NewsByTag />} />
-        <Route path='/posts/author/:author' element={<NewsByAuthor />} />
-        <Route path='/revista' element={<Magazine />} />
-        <Route path='/' element={<Home />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
-
-      <Bottom />
-      <Footer />
-      <GoToTop />
-      <ScrollToTopOnNavigation />
-
-    </div>
   )
 }
 

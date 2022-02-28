@@ -468,3 +468,52 @@ section {
     padding: 6.25rem 0;
   }
 }
+
+// Forms
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+  }
+}
+
+.message {
+  h6,
+  p {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .form-container {
+    label {
+      max-width: 500px;
+    }
+  }
+}
+
+// Messages
+
+.error-message {
+  padding: 1rem 4rem;
+  background-color: $danger-color;
+  color: $white-text;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
