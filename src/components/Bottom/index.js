@@ -47,7 +47,7 @@ function Bottom() {
                     <div className='col-lg-4 magazine'>
                         <div className='img-grid'>
                             {magazines.map((magazine, index) => {
-                                return <a href='/revista'><img src={magazine} alt='Tapa Revista Entre mates y otras yerbas' key={index} /></a>
+                                return <a key={index} href='/revista'><img src={magazine} alt='Tapa Revista Entre mates y otras yerbas' /></a>
                             })}
                         </div>
                     </div>

@@ -16,7 +16,6 @@ function Magazine() {
                     <article className="row">
                         {magazineList.map((({ imageSource, imageTitle, id }) => {
                             return (
-                                // <h1>{imageSource}</h1>
                                 <MagazineItem
                                     key={id}
                                     imageSource={imageSource}
