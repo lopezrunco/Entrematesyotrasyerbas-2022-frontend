@@ -12,19 +12,19 @@ import Magazine from './pages/magazine'
 import Home from './pages/home'
 import NotFound from './pages/notFound'
 import Login from './pages/login'
+import Dashboard from './pages/administration/dashboard'
 
 import ScrollToTopOnNavigation from './components/ScrollToTopOnNavigation'
 import Nav from './components/Nav'
 import Bottom from './components/Bottom'
 import Footer from './components/Footer'
 import GoToTop from './components/GoToTop'
-import Administration from './pages/administration'
 import RequireAuth from './components/RequireAuth'
+import AdministrationButton from './components/AdministrationButton'
 
 import { ENABLE_MFA, HIDE_LOADER, LOGIN, LOGOUT, REFRESH_TOKEN, SHOW_LOADER } from './utils/general-action-types'
 
 import './App.scss'
-import AdministrationButton from './components/AdministrationButton'
 
 export const AuthContext = createContext()
 
@@ -127,7 +127,7 @@ function App() {
         <Routes>
           <Route path='/administration' element={
             <RequireAuth>
-              <Administration />
+              <Dashboard />
             </RequireAuth>
           } />
           <Route path='/sesion-finalizada' element={
