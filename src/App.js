@@ -24,6 +24,7 @@ import RequireAuth from './components/RequireAuth'
 import { ENABLE_MFA, HIDE_LOADER, LOGIN, LOGOUT, REFRESH_TOKEN, SHOW_LOADER } from './utils/general-action-types'
 
 import './App.scss'
+import AdministrationButton from './components/AdministrationButton'
 
 export const AuthContext = createContext()
 
@@ -124,7 +125,7 @@ function App() {
     <AuthContext.Provider value={{ state, dispatch }} >
       <div className="App">
         <Routes>
-          <Route path='/Administration' element={
+          <Route path='/administration' element={
             <RequireAuth>
               <Administration />
             </RequireAuth>
@@ -147,6 +148,7 @@ function App() {
               <Footer />
               <GoToTop />
               <ScrollToTopOnNavigation />
+              <AdministrationButton />
             </>
           } />
           <Route path='/novedades' element={
@@ -157,6 +159,7 @@ function App() {
               <Footer />
               <GoToTop />
               <ScrollToTopOnNavigation />
+              <AdministrationButton />
             </>
           } />
           <Route path='/posts/:id' element={
@@ -167,6 +170,7 @@ function App() {
               <Footer />
               <GoToTop />
               <ScrollToTopOnNavigation />
+              <AdministrationButton />
             </>
           } />
           <Route path='/posts/category/:category' element={
@@ -177,6 +181,7 @@ function App() {
               <Footer />
               <GoToTop />
               <ScrollToTopOnNavigation />
+              <AdministrationButton />
             </>
           } />
           <Route path='/posts/tag/:tag' element={
@@ -187,6 +192,7 @@ function App() {
               <Footer />
               <GoToTop />
               <ScrollToTopOnNavigation />
+              <AdministrationButton />
             </>
           } />
           <Route path='/posts/author/:author' element={
@@ -197,6 +203,7 @@ function App() {
               <Footer />
               <GoToTop />
               <ScrollToTopOnNavigation />
+              <AdministrationButton />
             </>
           } />
           <Route path='/revista' element={
@@ -207,6 +214,7 @@ function App() {
               <Footer />
               <GoToTop />
               <ScrollToTopOnNavigation />
+              <AdministrationButton />
             </>
           } />
           <Route path='/login' element={
@@ -217,6 +225,7 @@ function App() {
               <Footer />
               <GoToTop />
               <ScrollToTopOnNavigation />
+              <AdministrationButton />
             </>
           } />
           <Route path='/' element={
@@ -227,6 +236,7 @@ function App() {
               <Footer />
               <GoToTop />
               <ScrollToTopOnNavigation />
+              <AdministrationButton />
             </>
           } />
           <Route path='*' element={
@@ -237,6 +247,7 @@ function App() {
               <Footer />
               <GoToTop />
               <ScrollToTopOnNavigation />
+              <AdministrationButton />
             </>
           } />
         </Routes>

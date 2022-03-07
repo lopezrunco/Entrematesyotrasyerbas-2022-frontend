@@ -1,0 +1,20 @@
+@import "../../Variables.scss";
+
+.administration-button {
+  position: fixed;
+  top: .5rem;
+  right: 0;
+  z-index: 9999;
+  background: $accent-color;
+  color: $white-text;
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 0.125rem 0 0 0.125rem;
+}
+
+@media screen and (min-width: 1200px) {
+    .administration-button {
+        bottom: 10rem;;
+        top: initial;
+    }
+}
