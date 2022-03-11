@@ -1,0 +1,67 @@
+@import "../../../../../../../Variables.scss";
+
+.post-list-item {
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+
+  h6,
+  p {
+    text-align: left;
+    margin: 0;
+  }
+
+  .post-image {
+    overflow: hidden;
+
+    img {
+      width: 3rem;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .post-tile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .post-author,
+  .post-category,
+  .post-published {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .post-list-item {
+    .post-author,
+    .post-category,
+    .post-published {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.5rem;
+
+      .published {
+        color: $success-color;
+      }
+
+      .unpublished {
+        color: $danger-color;
+      }
+    }
+    
+    .post-published {
+      justify-content: flex-end;
+    }
+  }
+}

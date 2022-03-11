@@ -1,0 +1,35 @@
+@import "../../../../../Variables.scss";
+
+.post-list {
+  background-color: $white-bg;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  text-align: left;
+
+  .header,
+  .list {
+    padding: 1rem;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+
+    h5 {
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .post-list {
+    .header,
+    .list {
+      padding: 1rem 2rem;
+    }
+  }
+}

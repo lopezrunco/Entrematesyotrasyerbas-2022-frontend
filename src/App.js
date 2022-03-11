@@ -25,6 +25,7 @@ import AdministrationButton from './components/AdministrationButton'
 import { ENABLE_MFA, HIDE_LOADER, LOGIN, LOGOUT, REFRESH_TOKEN, SHOW_LOADER } from './utils/general-action-types'
 
 import './App.scss'
+import ListNews from './pages/administration/listNews'
 
 export const AuthContext = createContext()
 
@@ -128,6 +129,11 @@ function App() {
           <Route path='/administration' element={
             <RequireAuth>
               <Dashboard />
+            </RequireAuth>
+          } />
+          <Route path='/administration/novedades' element={
+            <RequireAuth>
+              <ListNews />
             </RequireAuth>
           } />
           <Route path='/sesion-finalizada' element={
