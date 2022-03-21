@@ -1,34 +1,32 @@
 import { useEffect, useReducer } from "react"
 
 import { apiUrl } from "../../../../../utils/api-url"
-import { FETCH_CATEGORIES_FAILURE, FETCH_CATEGORIES_REQUEST, FETCH_CATEGORIES_SUCCESS } from "./action-types"
+import { FETCH_TAGS_FAILURE, FETCH_TAGS_REQUEST, FETCH_TAGS_SUCCESS } from "./action-types"
 import Loader from "../../../../../components/Loader"
-import CategoryListItem from "./components/CategorytListItem"
-
 import './style.scss'
 
 const initialState = {
-    categories: [],
+    tags: [],
     isFetching: false,
     hasError: false
 }
 
-// Categories reducer
+// Tags reducer
 const reducer = (state, action) => {
     switch (action.type) {
-        case FETCH_CATEGORIES_REQUEST:
+        case FETCH_TAGS_REQUEST:
             return {
                 ...state,
                 isFetching: true,
                 hasError: false
             }
-        case FETCH_CATEGORIES_SUCCESS:
+        case FETCH_TAGS_SUCCESS:
             return {
                 ...state,
                 isFetching: false,
-                categories: action.payload.categories
+                tags: action.payload.uniqueTags
             }
-        case FETCH_CATEGORIES_FAILURE:
+        case FETCH_TAGS_FAILURE:
             return {
                 ...state,
                 isFetching: false,
@@ -39,15 +37,15 @@ const reducer = (state, action) => {
     }
 }
 
-function CategoriesList() {
+function TagsList() {
     const [state, dispatch] = useReducer(reducer, initialState)
 
     useEffect(() => {
         dispatch({
-            type: FETCH_CATEGORIES_REQUEST
+            type: FETCH_TAGS_REQUEST
         })
 
-        fetch(apiUrl('/categories'), {
+        fetch(apiUrl('/tags'), {
             headers: {
                 'Content-type': 'application/json'
             }
@@ -59,21 +57,21 @@ function CategoriesList() {
             }
         }).then(data => {
             dispatch({
-                type: FETCH_CATEGORIES_SUCCESS,
+                type: FETCH_TAGS_SUCCESS,
                 payload: data
             })
         }).catch(error => {
-            console.error('Error fetching the categories', error)
+            console.error('Error fetching the posts', error)
             dispatch({
-                type: FETCH_CATEGORIES_FAILURE
+                type: FETCH_TAGS_FAILURE
             })
         })
     }, [])
 
     return (
-        <div className="categories-list-admin">
+        <div className="tags-list-admin">
             <div className="header">
-                <h5>Categorías</h5>
+                <h5>Etiquetas</h5>
             </div>
             <div className="list">
                 {state.isFetching ? (
@@ -82,12 +80,12 @@ function CategoriesList() {
                     <p>Error al conectar al servidor</p>
                 ) : (
                     <>
-                        {state.categories.length > 0 ? (
-                            state.categories.map((category, categoryIndex) => (
-                                <CategoryListItem key={categoryIndex} category={category} />
+                        {state.tags.length > 0 ? (
+                            state.tags.map((tag, tagIndex) => (
+                                <span key={tagIndex} className="tag-item">{tag}</span>
                             ))
                         ) : (
-                            <p>No hay categorías</p>
+                            <p>No hay etiquetas</p>
                         )}
                     </>
                 )}
@@ -96,4 +94,4 @@ function CategoriesList() {
     )
 }
 
-export default CategoriesList
+export default TagsList

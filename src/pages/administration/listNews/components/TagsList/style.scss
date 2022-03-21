@@ -1,12 +1,11 @@
 @import "../../../../../Variables.scss";
 
-.categories-list-admin {
+.tags-list-admin {
   background-color: $white-bg;
   border: 1px solid $border-color;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
   text-align: left;
-  margin-bottom: 1rem;
 
   .header,
   .list {
@@ -24,10 +23,22 @@
       margin: 0;
     }
   }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .tag-item {
+      background-color: $light-bg;
+      padding: 0.2rem 0.6rem;
+      border-radius: $border-radius;
+    }
+  }
 }
 
 @media screen and (min-width: 992px) {
-  .categories-list-admin {
+  .tags-list-admin {
     .header,
     .list {
       padding: 1rem 2rem;
