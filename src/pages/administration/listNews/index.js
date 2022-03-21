@@ -1,6 +1,7 @@
 import DashboardPageTitle from "../dashboard/components/DashboardPageTitle"
 import SideNavBar from "../dashboard/components/SideNavBar"
 import UserInfo from "../dashboard/components/UserInfo"
+import CategoriesList from "./components/CategoriesList"
 import PostsList from "./components/PostsList"
 
 function ListNews() {
@@ -20,7 +21,7 @@ function ListNews() {
                             <PostsList />
                         </div>
                         <div className="col-md-6">
-                            <p>Categories</p>
+                            <CategoriesList />
                         </div>
                         <div className="col-md-6">
                             <p>Tags</p>
