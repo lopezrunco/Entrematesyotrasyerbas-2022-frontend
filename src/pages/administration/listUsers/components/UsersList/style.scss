@@ -25,6 +25,10 @@
       justify-content: center;
       align-items: center;
       gap: 1rem;
+      background-color: $light-bg;
+      padding: 0.1rem 0.5rem;
+      border-radius: $border-radius;
+      font-weight: 700;
     }
 
     h5 {

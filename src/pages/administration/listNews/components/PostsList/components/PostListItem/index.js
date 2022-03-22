@@ -1,4 +1,4 @@
-import { Folder, Person, CheckCircleFill, XCircleFill,  } from 'react-bootstrap-icons'
+import { Folder, Person  } from 'react-bootstrap-icons'
 import './style.scss'
 
 function PostListItem(props) {
@@ -19,7 +19,7 @@ function PostListItem(props) {
                 <p>{props.post.author}</p>
             </div>
             <div className='col-1 post-published'>
-                {props.post.published ? <CheckCircleFill className='published' /> : <XCircleFill className='unpublished' />}
+                {props.post.published ? <small className='badge-tag success'>Publicado</small> : <small className='badge-tag danger'>Despublicado</small>}
             </div>
         </div>
     )

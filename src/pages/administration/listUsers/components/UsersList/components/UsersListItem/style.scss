@@ -26,14 +26,16 @@
   }
 
   .user-id,
-  .user-name {
+  .user-email,
+  .user-mfa-enabled {
     display: none;
   }
 }
 
 @media screen and (min-width: 992px) {
   .users-list-item {
-    .user-name,
+    .user-email,
+    .user-mfa-enabled,
     .user-id {
       display: flex;
     }

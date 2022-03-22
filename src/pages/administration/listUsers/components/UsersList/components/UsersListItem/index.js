@@ -7,15 +7,22 @@ function UsersListItem({ user }) {
             <div className='row'>
                 <div className='col-12 col-lg-4 user-name'>
                     <Person />
-                    <p>{user.name}</p>
+                    <h6>{user.name}</h6>
                 </div>
                 <div className='col-12 col-lg-4 user-email'>
                     <Envelope />
                     <p>{user.email}</p>
                 </div>
-                <div className='col-12 col-lg-4 user-id'>
-                    <Hash />
-                    <p>{user.id}</p>
+                <div className='col-12 col-lg-2 user-mfa-enabled'>
+                    {user.mfaEnabled ?
+                        <small className='badge-tag success'>MFA habilitado</small> :
+                        <small className='badge-tag danger'>MFA deshabilitado</small>}
+                </div>
+                <div className='col-12 col-lg-2 user-id'>
+                    <small className='badge-tag warning'>
+                        <Hash />
+                        {user.id}
+                    </small>
                 </div>
             </div>
         </div>

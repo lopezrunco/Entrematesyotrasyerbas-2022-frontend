@@ -50,14 +50,6 @@
       justify-content: flex-start;
       align-items: center;
       gap: 0.5rem;
-
-      .published {
-        color: $success-color;
-      }
-
-      .unpublished {
-        color: $danger-color;
-      }
     }
     
     .post-published {
