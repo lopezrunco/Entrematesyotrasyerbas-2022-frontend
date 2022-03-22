@@ -12,7 +12,10 @@ import Magazine from './pages/magazine'
 import Home from './pages/home'
 import NotFound from './pages/notFound'
 import Login from './pages/login'
+
 import Dashboard from './pages/administration/dashboard'
+import ListNews from './pages/administration/listNews'
+import ListUsers from './pages/administration/listUsers'
 
 import ScrollToTopOnNavigation from './components/ScrollToTopOnNavigation'
 import Nav from './components/Nav'
@@ -25,7 +28,6 @@ import AdministrationButton from './components/AdministrationButton'
 import { ENABLE_MFA, HIDE_LOADER, LOGIN, LOGOUT, REFRESH_TOKEN, SHOW_LOADER } from './utils/general-action-types'
 
 import './App.scss'
-import ListNews from './pages/administration/listNews'
 
 export const AuthContext = createContext()
 
@@ -134,6 +136,11 @@ function App() {
           <Route path='/administration/novedades' element={
             <RequireAuth>
               <ListNews />
+            </RequireAuth>
+          } />
+          <Route path='/administration/usuarios' element={
+            <RequireAuth>
+              <ListUsers />
             </RequireAuth>
           } />
           <Route path='/sesion-finalizada' element={

@@ -1,0 +1,45 @@
+@import "../../../../../../../Variables.scss";
+
+.users-list-item {
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .user-id,
+  .user-name,
+  .user-email {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .user-id,
+  .user-name {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .users-list-item {
+    .user-name,
+    .user-id {
+      display: flex;
+    }
+
+    .user-id {
+      justify-content: flex-end;
+    }
+  }
+}
