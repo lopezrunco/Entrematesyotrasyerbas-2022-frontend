@@ -23,7 +23,7 @@ function Login() {
 
     const logout = () => {
         dispatch({
-            type: LOGOUT,
+            type: LOGOUT
         })
         navigate('/sesion-finalizada')
     }

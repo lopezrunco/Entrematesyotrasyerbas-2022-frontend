@@ -39,6 +39,7 @@
       padding: 1rem 5rem;
       background-color: $primary-color;
       color: $white-text;
+      cursor: pointer;
 
       &:hover {
         background-color: darken($color: $primary-color, $amount: 5);
