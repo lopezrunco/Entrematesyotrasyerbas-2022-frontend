@@ -16,8 +16,8 @@ function SideNavBar() {
                 <img src={mobileLogo} />
                 <nav>
                     <a className="icon" href="/administration"><Gear className="icon" />Administración</a>
-                    <a className="icon" href="/administration/estadisticas"><BarChart className="icon" />Estadísticas</a>
-                    <a className="icon" href="/administration/preferencias"><UiChecksGrid className="icon" />Preferencias</a>
+                    {/* <a className="icon" href="/administration/estadisticas"><BarChart className="icon" />Estadísticas</a> */}
+                    {/* <a className="icon" href="/administration/preferencias"><UiChecksGrid className="icon" />Preferencias</a> */}
                     <a className="icon" href="/administration/usuarios"><People className="icon" />Usuarios</a>
                     <a className="icon" href="/administration/novedades"><FileEarmark className="icon" />Novedades</a>
                 </nav>

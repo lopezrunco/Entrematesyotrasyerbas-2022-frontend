@@ -14,12 +14,13 @@ function Magazine() {
             <main className="magazine-page">
                 <section className="container">
                     <article className="row">
-                        {magazineList.map((({ imageSource, imageTitle, id }) => {
+                        {magazineList.map((({ imageSource, imageTitle, resume, id }) => {
                             return (
                                 <MagazineItem
                                     key={id}
                                     imageSource={imageSource}
                                     imageTitle={imageTitle}
+                                    resume={resume}
                                 />
                             )
                         }))}
