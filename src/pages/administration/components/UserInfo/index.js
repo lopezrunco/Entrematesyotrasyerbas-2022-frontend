@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { PersonFill } from "react-bootstrap-icons"
 
-import { AuthContext } from "../../../../../App"
+import { AuthContext } from "../../../../App"
 import './style.scss'
 
 function UserInfo() {

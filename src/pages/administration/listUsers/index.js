@@ -1,6 +1,6 @@
-import DashboardPageTitle from "../dashboard/components/DashboardPageTitle"
-import SideNavBar from "../dashboard/components/SideNavBar"
-import UserInfo from "../dashboard/components/UserInfo"
+import DashboardPageTitle from "../components/DashboardPageTitle"
+import SideNavBar from "../components/SideNavBar"
+import UserInfo from "../components/UserInfo"
 import UsersList from "./components/UsersList"
 
 function listUsers() {

@@ -1,10 +1,10 @@
 import { useContext, useState } from "react"
 import { Gear, BarChart, UiChecksGrid, People, ChevronCompactRight, ChevronCompactLeft, House, Person, FileEarmark } from "react-bootstrap-icons"
 import { useNavigate } from "react-router-dom"
-import { AuthContext } from "../../../../../App"
+import { AuthContext } from "../../../../App"
 
-import mobileLogo from '../../../../../assets/mobile-logo.png'
-import { LOGOUT } from "../../../../../utils/general-action-types"
+import mobileLogo from '../../../../assets/mobile-logo.png'
+import { LOGOUT } from "../../../../utils/general-action-types"
 import './style.scss'
 
 function SideNavBar() {
