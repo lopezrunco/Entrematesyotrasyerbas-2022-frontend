@@ -1,6 +1,7 @@
 import DashboardPageTitle from "../components/DashboardPageTitle"
 import SideNavBar from "../components/SideNavBar"
 import UserInfo from "../components/UserInfo"
+import HelloAdmin from "./components/HelloAdmin"
 import PostsPreview from "./components/PostsPreview"
 import UsersPreview from "./components/UsersPreview"
 import CategoriesPreview from "./components/CategoriesPreview"
@@ -20,6 +21,11 @@ function Dashboard() {
             </div>
             <div className="dash-board-body">
                 <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <HelloAdmin />
+                        </div>
+                    </div>
                     <div className="row">
                         <div className="col-md-6 col-lg-3">
                             <PostsPreview />
